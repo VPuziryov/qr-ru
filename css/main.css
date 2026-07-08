@@ -448,14 +448,6 @@ h3{
     margin:0;
 }
 
-/* ---------------- QR GRID ---------------- */
-
-.qr-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:18px;
-}
-
 .qr-card{
     position:relative;
     min-height:230px;
@@ -465,6 +457,10 @@ h3{
     border:1px solid var(--line);
     box-shadow:0 10px 24px rgba(8,35,61,.06);
     transition:.25s;
+
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
 }
 
 .qr-card:hover{
@@ -482,20 +478,6 @@ h3{
     opacity:.78;
 }
 
-.qr-num{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:46px;
-    height:46px;
-    margin-bottom:14px;
-    border-radius:14px;
-    background:linear-gradient(135deg,var(--teal),var(--accent));
-    color:white;
-    font-weight:900;
-    letter-spacing:.04em;
-}
-
 .qr-card h3{
     margin:0 0 10px;
     font-size:20px;
@@ -503,15 +485,17 @@ h3{
 }
 
 .qr-card p{
-    margin:0 0 18px;
+    margin:0 0 22px;
     font-size:15px;
 }
 
-.card-link{
-    position:absolute;
-    left:22px;
-    bottom:20px;
+.card-link,
+.status{
+    margin-top:auto;
     display:inline-block;
+}
+
+.card-link{
     padding:9px 15px;
     border-radius:999px;
     background:var(--teal);
@@ -527,10 +511,6 @@ h3{
 }
 
 .status{
-    position:absolute;
-    left:22px;
-    bottom:20px;
-    display:inline-block;
     padding:8px 13px;
     border-radius:999px;
     border:1px dashed #9bb3bf;
